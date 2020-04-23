@@ -17,5 +17,17 @@ public class Inscripcion {
 	//Getters and Setters
 	
 	//Responsabilidades
-	
+	@Override
+	public boolean equals(Object obj) {
+		boolean resultado = false;
+		if (obj instanceof Inscripcion) {
+			Inscripcion temporal = (Inscripcion) obj;
+			if(this.fechaDelDia == temporal.fechaDelDia) {
+				resultado = true;
+			} else {
+				resultado = false;
+			}
+		}
+		return resultado;
+	}
 }

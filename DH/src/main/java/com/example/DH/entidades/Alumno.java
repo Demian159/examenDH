@@ -37,26 +37,17 @@ public class Alumno {
 		this.codigoDeAlumno = codigoDeAlumno;
 	}
 	//Responsabilidades
-	public boolean equals(Alumno comparable) {
-		if(this.codigoDeAlumno == comparable.codigoDeAlumno) {
-			return true;
-		} else {
-			return false;
+	@Override
+	public boolean equals(Object obj) {
+		boolean resultado = false;
+		if (obj instanceof Alumno) {
+			Alumno temporal = (Alumno) obj;
+			if(this.codigoDeAlumno == temporal.codigoDeAlumno) {
+				resultado = true;
+			} else {
+				resultado = false;
+			}
 		}
-	}
-
-	//Atributos
-	
-	//Constructor
-	
-	//Getters and Setters
-	
-	//Responsabilidades
-	public boolean equals(Alumno comparable) {
-		if(this.codigoDeAlumno == comparable.codigoDeAlumno) {
-			return true;
-		} else {
-			return false;
-		}
+		return resultado;
 	}
 }

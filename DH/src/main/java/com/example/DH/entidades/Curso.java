@@ -63,12 +63,18 @@ public class Curso {
 	}
 
 	//Responsabilidades
-	public boolean equals(Curso comparable) {
-		if(this.codigoDeCurso == comparable.codigoDeCurso) {
-			return true;
-		} else {
-			return false;
+	@Override
+	public boolean equals(Object obj) {
+		boolean resultado = false;
+		if (obj instanceof Curso) {
+			Curso temporal = (Curso) obj;
+			if(this.codigoDeCurso == temporal.codigoDeCurso) {
+				resultado = true;
+			} else {
+				resultado = false;
+			}
 		}
+		return resultado;
 	}
 	public boolean agregarUnAlumno (Alumno unAlumno) {
 		if(this.listaAlumnosInscriptos.size() < this.cupoMaximoDeAlumnos) {

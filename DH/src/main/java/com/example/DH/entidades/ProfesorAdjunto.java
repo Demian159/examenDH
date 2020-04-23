@@ -1,11 +1,11 @@
 package com.example.DH.entidades;
 
-public class ProfesorAdjunto {
+public class ProfesorAdjunto extends Profesor{
 	//Atributos
 	private Integer horasDeConsulta;
 
 	//Constructor
-	
+	public ProfesorAdjunto () {}
 	//Getters and Setters
 	public Integer getHorasDeConsulta() {
 		return horasDeConsulta;

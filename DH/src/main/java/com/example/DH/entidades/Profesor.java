@@ -44,13 +44,17 @@ public class Profesor {
 		this.codigoDeProfesor = codigoDeProfesor;
 	}
 	//Responsabilidades
-	public boolean equals(Profesor comparable) {
-		if(this.codigoDeProfesor == comparable.codigoDeProfesor) {
-			return true;
-		} else {
-			return false;
+	@Override
+	public boolean equals(Object obj) {
+		boolean resultado = false;
+		if (obj instanceof Profesor) {
+			Profesor temporal = (Profesor) obj;
+			if(this.codigoDeProfesor == temporal.codigoDeProfesor) {
+				resultado = true;
+			} else {
+				resultado = false;
+			}
 		}
-	}
-
-	
+		return resultado;
+	}	
 }
