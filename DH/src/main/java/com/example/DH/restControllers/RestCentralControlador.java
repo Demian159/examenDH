@@ -34,6 +34,18 @@ public class RestCentralControlador {
 	@GetMapping("http:localhost:8000/altaAlumno")
 	public void altaAlumno(@RequestParam("nombre") String nombre,@RequestParam("apellido") String apellido,
 				@RequestParam("codigoAlumno") Integer codigoAlumno) {
-		manager1.altaAlumno(nombre, apellido, codigoAlumno);;
+		manager1.altaAlumno(nombre, apellido, codigoAlumno);
+	}
+	@GetMapping("http:localhost:8000/inscribirAlumno")
+	public void inscribirAlumno(@RequestParam("codigoAlumno") Integer codigoAlumno,@RequestParam("codigoCurso") Integer codigoCurso) {
+		manager1.inscribirAlumno(codigoAlumno, codigoCurso);
+	}
+	@GetMapping("http:localhost:8000/bajaProfesor")
+	public void bajaProfesor(@RequestParam("codigoProfesor") Integer codigoProfesor) {
+		manager1.bajaProfesor(codigoProfesor);
+	}
+	@GetMapping("http:localhost:8000/inscribirAlumno")
+	public void inscribirAlumno(@RequestParam("codigoAlumno") Integer codigoAlumno,@RequestParam("codigoCurso") Integer codigoCurso) {
+		manager1.inscribirAlumno(codigoAlumno, codigoCurso);
 	}
 }
