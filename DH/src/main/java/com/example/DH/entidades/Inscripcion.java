@@ -2,6 +2,9 @@ package com.example.DH.entidades;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Inscripcion {
 	//Atributos
 	private Alumno alumno;

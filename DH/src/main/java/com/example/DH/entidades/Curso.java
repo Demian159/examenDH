@@ -2,6 +2,9 @@ package com.example.DH.entidades;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Curso {
 	//Atributos
 	private String nombre;

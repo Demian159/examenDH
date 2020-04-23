@@ -1,5 +1,8 @@
 package com.example.DH.entidades;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Profesor {
 	//Atributos
 	private String nombre;

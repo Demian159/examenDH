@@ -1,5 +1,8 @@
 package com.example.DH.entidades;
 
+import javax.persistence.Entity;
+
+@Entity
 public class ProfesorTitular extends Profesor{
 	//Atributos
 	private String especialidad;

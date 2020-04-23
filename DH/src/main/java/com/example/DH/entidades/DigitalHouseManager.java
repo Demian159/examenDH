@@ -2,6 +2,9 @@ package com.example.DH.entidades;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+
+@Entity
 public class DigitalHouseManager {
 	//Atributos
 	private List<Alumno> listaDeAlumnos;
@@ -150,6 +153,4 @@ public class DigitalHouseManager {
 		cursoAInscribir.setProfesorTitular(profesorTituAInscribir);
 		cursoAInscribir.setProfesorAdjunto(ProfesorAdjuAInscribir);
 	}
-	
-
 }
