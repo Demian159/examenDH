@@ -1,9 +1,11 @@
 package com.example.DH.restControllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.DH.entidades.Alumno;
 import com.example.DH.entidades.DigitalHouseManager;
 
 @RestController
@@ -44,8 +46,34 @@ public class RestCentralControlador {
 	public void bajaProfesor(@RequestParam("codigoProfesor") Integer codigoProfesor) {
 		manager1.bajaProfesor(codigoProfesor);
 	}
-	@GetMapping("http:localhost:8000/inscribirAlumno")
-	public void inscribirAlumno(@RequestParam("codigoAlumno") Integer codigoAlumno,@RequestParam("codigoCurso") Integer codigoCurso) {
-		manager1.inscribirAlumno(codigoAlumno, codigoCurso);
+	@GetMapping("http:localhost:8000/detalleAlumno")
+	public Alumno detalleAlumno(@RequestParam("nombre") String nombre) {
+		Alumno alEncontrado = null;
+		for(Alumno buscado : manager1.getListaDeAlumnos()) {
+			if(buscado.getNombre() == nombre) {
+				alEncontrado = buscado;
+			}
+		}
+		return alEncontrado;
+	}
+	@GetMapping("http:localhost:8000/actualizarAlumno")
+	public Alumno actualizarAlumno(@RequestParam("nombre") String nombre, @RequestParam("apellido") String apellido, @RequestParam("codigoDeAlumno") Integer codigoDeAlumno) {
+		Alumno alEncontrado = null;
+		for(Alumno buscado : manager1.getListaDeAlumnos()) {
+			if(buscado.getNombre() == nombre) {
+				alEncontrado = buscado;
+			}
+		}
+		alEncontrado.setNombre(nombre);
+		alEncontrado.setApellido(apellido);
+		alEncontrado.setCodigoDeAlumno(codigoDeAlumno);
+		return alEncontrado;
 	}
 }
+
+/*RESPUESTA PARTE K
+	Tendria al metodo inscribirAlumno en la Clase Alumno, modificaria este metodo para almacenar en una variable
+	tipo List<Inscripcion> las mismas y así tener un registro para consultar directamente desde el Alumno por sus 
+	inscripciones.
+
+*/
